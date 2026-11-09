@@ -8,20 +8,15 @@ and Raspberry Pi control software required to reproduce and commission the
 robot.
 
 <p align="center">
-  <img src="media/obotx-robot.jpg" alt="ObotX mobile manipulator" width="70%">
+  <img src="media/obotx-robot.jpg" alt="ObotX mobile manipulator" width="48%">
+  <img src="media/obotx-robot-extended.jpg" alt="ObotX manipulator extended" width="48%">
 </p>
 
 ### Demonstration video
 
-<p align="center">
-  <a href="media/obotx-demo.mp4?raw=1">
-    <img src="media/obotx-robot-extended.jpg" alt="Watch the ObotX demonstration video" width="70%">
-  </a>
-</p>
+The following video shows the assembled ObotX robot in operation.
 
-<p align="center">
-  <a href="media/obotx-demo.mp4?raw=1"><strong>▶ Watch the ObotX demonstration video (MP4)</strong></a>
-</p>
+https://github.com/user-attachments/assets/15b41a1a-71f6-4121-ad5b-7e64adb0d48f
 
 ## Teleoperation system
 
@@ -30,15 +25,18 @@ The complete ObotX teleoperation system consists of two parts:
 | Component | Role |
 | --- | --- |
 | **Device** | The physical ObotX robot, including the mecanum base, manipulator, gripper, cameras, Raspberry Pi and STM32 controllers. |
-| **Teleoperation software** | The remote operator interface that sends commands to the Device and receives robot telemetry and camera video. |
+| **Teleoperation interface** | The browser-based operator panel served by the Raspberry Pi. It sends commands to the Device and displays robot status and camera video. |
 
 ```text
-Operator -> Teleoperation software -> Wi-Fi / Ethernet -> ObotX Device
+Operator -> Browser interface -> Wi-Fi / Ethernet -> ObotX Device
 ```
 
-This repository contains the complete Device documentation and software. The
-customer's teleoperation software communicates with the Device through its
-published interface and is maintained separately from this repository.
+The Raspberry Pi web server and teleoperation interface are included in this
+repository under [`software/rpi`](software/rpi/).
+
+### Teleoperation interface
+
+![ObotX browser-based teleoperation interface](media/obotx-teleoperation-interface.png)
 
 ## Build and commissioning order
 
